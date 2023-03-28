@@ -12,8 +12,7 @@ module GraphQL
           if val.nil?
             GraphQL::Query::InputValidationResult.new
           else
-            validate_non_null_input(val, ctx)
-            validate_non_null_input(val, ctx, max_errors: max_errors) || Query::InputValidationResult::VALID
+            validate_non_null_input(val, ctx, max_errors: max_errors)
           end
         end
 

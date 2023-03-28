@@ -32,10 +32,7 @@ Rake::TestTask.new do |t|
   t.warning = false
 end
 
-require 'rubocop/rake_task'
-RuboCop::RakeTask.new
-
-default_tasks = [:test, :rubocop]
+default_tasks = [:test]
 if ENV["SYSTEM_TESTS"]
   task(default: ["test:system"] + default_tasks)
 else
